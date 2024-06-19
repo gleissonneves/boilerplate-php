@@ -1,0 +1,25 @@
+Referente a padrões do projeto que deve ser mantidas.
+
+O sistema deve utilizar "_" (underscore) para dizer quais sãos as funções privadas, exemplo:
+_acesso_a_minha_conta(), _teste();
+
+
+// CLASSES
+load_class - 
+is_loaded - Mantém o controle de quais bibliotecas foram carregadas
+
+
+// DEPURAÇÃO
+dd - Descarte as variáveis ​​passadas e encerra o script.
+
+
+
+//HTTP (não confundir com o arquivo HTTP.php)
+set_status_header - configura a header de acordo com o status passado
+show_error - configura a header e exibe uma pagina de error de acordo com status passado e arquivo
+_PUT - Processa dados da requisição PUT
+_DELETE - Processa dados da requisição DELETE
+_req - Obter e combinar dos dados de $_GET, $_POST, $_COOKIE, _PUT, _DELETE da requisição
+
+//ROTA
+_initialize_router - inicializa o sistema de rotas

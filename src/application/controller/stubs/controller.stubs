@@ -1,0 +1,97 @@
+<?php
+
+namespace src\application\controller;
+
+use src\_core\controller\FrontController;
+
+class {class} extends FrontController
+{
+
+  /**
+    * Display a listing of the resource.
+    *
+    * @return void
+    */
+  public function index()
+  {
+    $this->view('list', array());
+  }
+
+
+
+  /**
+    * Display the specified resource.
+    *
+    * @param  @param int $id The ID of the resource.
+    * @return void
+    */
+  public function show($id)
+  {
+    $this->view('form', array());
+  }
+
+
+
+  /**
+    * Show the form for creating a new resource.
+    *
+    * @throws Some_Exception_Class description of exception
+    * @return Some_Return_Value
+    */
+  public function create()
+  {
+    $this->view('form');
+    echo "Formulário de criação";
+  }
+
+  /**
+    * Store a newly created resource in storage.
+    *
+    * This function is responsible for saving a new resource to the database. It takes no parameters and does not return any value.
+    *
+    * @throws None
+    * @return void
+    */
+  public function store()
+  {
+    echo "Salvando...";
+  }
+
+
+
+  /**
+    * Show the form for editing the specified resource.
+    *
+    * @param int $id The ID of the resource to be edited.
+    * @return void
+    */
+  public function edit($id)
+  {
+    $this->view('form', array());
+    echo "Formulário de edição";
+  }
+
+  /**
+    * Update the specified resource in storage.
+    *
+    * @param int $id The ID of the resource to be updated.
+    * @return void
+    */
+  public function update($id)
+  {
+    echo "Atualizando...";
+  }
+
+
+
+  /**
+    * Remove the specified resource from storage.
+    *
+    * @param int $id The ID of the resource to be deleted.
+    * @return void
+    */
+  public function destroy($id)
+  {
+    echo "Excluindo...";
+  }
+}

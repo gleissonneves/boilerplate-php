@@ -1,0 +1,134 @@
+@mixin create-button-styles($buttonStructure, $buttonNames) {
+  @each $buttonName in $buttonNames {
+    .dy-btn.--#{$buttonName} {
+      @each $type, $styler in $buttonStructure {
+        @if $type == 'normal' {
+          @each $stateName, $properties in $styler {
+            @if $stateName == 'neutro' {
+              --dy-btn-bg-color: var(--#{$buttonName}-500);
+              --dy-border-color: var(--#{$buttonName}-500);
+              --dy-contrast: var(--support-100);
+            }
+            @if $stateName == 'hover' {
+              &:hover {
+                --dy-btn-bg-color: var(--#{$buttonName}-600);
+                --dy-border-color: var(--#{$buttonName}-600);
+                --dy-contrast: var(--support-100);
+              }
+            }
+            @if $stateName == 'active' {
+              &:active {
+                --dy-btn-bg-color: var(--#{$buttonName}-400);
+                --dy-border-color: var(--#{$buttonName}-400);
+                --dy-contrast: var(--support-100);
+              }
+            }
+            @if $stateName == 'disabled' {
+              &[disabled] {
+                --dy-btn-bg-color: var(--gray-100);
+                --dy-border-color:var(--gray-200);
+                --dy-contrast: var(--gray-400);
+
+                border-width: var(--dy-btn-bw);
+                border-color: var(--dy-border-color);
+                border-style: solid;
+
+                cursor: not-allowed !important;
+                transform: none !important;
+
+                i {
+                  transform: none !important;
+                }
+              }
+            }
+          }
+        }
+        @if $type == 'outline' {
+          &.--outline {
+            @each $stateName, $properties in $styler {
+              @if $stateName == 'neutro' {
+                --dy-btn-bg-color: var(--support-300);
+                --dy-border-color: var(--#{$buttonName}-500);
+                --dy-contrast: var(--#{$buttonName}-500);
+              }
+              @if $stateName == 'hover' {
+                &:hover {
+                  --dy-btn-bg-color: var(--#{$buttonName}-500);
+                  --dy-border-color: var(--#{$buttonName}-500);
+                  --dy-contrast: var(--support-100);
+                }
+              }
+              @if $stateName == 'active' {
+                &:active {
+                  --dy-btn-bg-color: var(--#{$buttonName}-400);
+                  --dy-border-color: var(--#{$buttonName}-400);
+                  --dy-contrast: var(--support-100);
+                }
+              }
+              @if $stateName == 'disabled' {
+                &[disabled] {
+                  --dy-btn-bg-color: var(--support-300) !important;
+                  --dy-contrast: var(--gray-400);
+                  --dy-border-color: var(--gray-200);
+
+                  cursor: not-allowed !important;
+                  transform: none !important;
+
+                  cursor: not-allowed !important;
+                  transform: none !important;
+
+                  i {
+                    transform: none !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        @if $type == 'link' {
+          &.--link {
+            @each $stateName, $properties in $styler {
+              @if $stateName == 'neutro' {
+                --dy-btn-bg-color: var(--support-300);
+                --dy-border-color: var(--support-300);
+                --dy-contrast: var(--#{$buttonName}-500);
+              }
+              @if $stateName == 'hover' {
+                &:hover {
+                  --dy-btn-bg-color: var(--support-300);
+                  --dy-border-color: var(--support-300);
+                  --dy-contrast: var(--#{$buttonName}-600);
+                }
+              }
+              @if $stateName == 'active' {
+                &:active {
+                  --dy-btn-bg-color: var(--support-300);
+                  --dy-border-color: var(--support-300);
+                  --dy-contrast: var(--#{$buttonName}-400);
+                }
+              }
+              @if $stateName == 'disabled' {
+                &[disabled] {
+                  --dy-btn-bg-color: var(--support-300) !important;
+                  --dy-contrast: var(--gray-400);
+                  --dy-border-color: var(--support-300);
+
+                  cursor: not-allowed !important;
+                  transform: none !important;
+
+                  cursor: not-allowed !important;
+                  transform: none !important;
+
+                  i {
+                    transform: none !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

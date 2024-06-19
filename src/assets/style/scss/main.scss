@@ -1,0 +1,62 @@
+@import "./_core/mixins/color.mix.scss";
+@import "./_core/mixins/util/space.mix.scss";
+
+
+@import './reset.scss';
+@import './theme/_space.scss';
+@import './theme/_tokens.scss';
+@import './theme/_light-brand.scss';
+
+:root {
+  @include generate-spacing-var($spacing-values);
+  @include generate-spacing-var($spacing-values);
+}
+
+body.light-theme-brand {
+  position: relative;
+  --brand-gradient: -150deg, #09C5FF 0%, #1AC7CD 50%, #35C89E 100%, #09C5FF 0%, #1AC7CD 50%, #35C89E 100%;
+  @include register-theme-colors($themeLightBrand);
+
+  --contrast-100: #fff;
+  --contrast-200: #f2f2f2;
+  --contrast-300: #000;
+  --contrast-400: #151F29; 
+  --contrast-500: #011418;
+  --contrast-600: #061625;
+
+
+  --sidebar-helper-menu: var(--gray-900);
+  --sidebar-main-color-text: var(--gray-500);
+  --sidebar-main-color-text-hover: var(--brand-500);
+
+  background: var(--gray-100);
+}
+
+/* util */
+@import './util/flex.scss';
+
+@include generate-spacing-classes(margin, $spacing-values, true);
+@include generate-spacing-classes(padding, $spacing-values, true);
+@include generate-spacing-classes(gap, $spacing-values, false);
+
+@include generate-class-color($themeLightBrand);
+
+/* components */
+
+/* atoms */
+@import './components/atoms/checkbox.scss';
+@import './components/atoms/icons.scss';
+@import './components/atoms/input.scss';
+@import './components/atoms/label.scss';
+@import './components/atoms/link.scss';
+@import './components/atoms/toggle.scss';
+@import './components/atoms/badge.scss';
+
+/* molecules */
+@import './components/molecules/buttons.scss';
+@import './components/molecules/table.scss';
+
+/* organisms */
+@import './components/organisms/sidebar.scss';
+@import './components/organisms/header.scss';
+/* pages */
