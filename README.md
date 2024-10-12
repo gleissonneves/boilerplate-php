@@ -11,7 +11,7 @@ src
     ┗ templateEngine.md
 ```
 
-CLI
+#### CLI
 Lista de comandos do liz.php
 ```
  php liz.php - Executa o ambiente local necessário para o desenvolvimento. 
