@@ -5,15 +5,15 @@ function getLocalIP() {
 }
 
 function showHelp() {
-    echo "Lista de comandos do devServer.php \n";
+    echo "Lista de comandos do liz.php \n";
     echo "-------------------------------------- \n";
-    echo "php devServer.php - Executa o ambiente local necessário para o desenvolvimento. \n";
-    echo "php devServer.php --expor - Executa o ambiente no ip da sua máquina caso deseje depurar em outros locais enquanto desenvolve. \n";
-    echo "php devServer.php --controller <ControllerName> - Cria um novo controller baseado no template.";
+    echo "php liz.php - Executa o ambiente local necessário para o desenvolvimento. \n";
+    echo "php liz.php --expor - Executa o ambiente no ip da sua máquina caso deseje depurar em outros locais enquanto desenvolve. \n";
+    echo "php liz.php --controller <ControllerName> - Cria um novo controller baseado no template.";
 }
 
 function createController($controllerName) {
-    $stubPath = __DIR__ . '/src/application/controller/stubs/controller.stubs';
+    $stubPath = __DIR__ . '/src/_core/controller/stubs/controller.stubs';
     $controllerDir = __DIR__ . '/src/application/controller';
     $controllerFile = $controllerDir . '/' . $controllerName . 'Controller.php';
 

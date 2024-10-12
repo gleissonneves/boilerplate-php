@@ -1,8 +1,5 @@
 <?php
 
-use src\application\controller\DashboardController;
-use src\application\controller\UsuarioController;
-
 /**
  * routes exibem ou agem
  * é composto por texto, parametros e query params;
@@ -48,27 +45,14 @@ use src\application\controller\UsuarioController;
 
 $routes = [
   '/' => [
-    'redirect' => '/login'
+    'redirect' => '/home'
   ],
-  '/login' => [
+  '/home' => [
     'GET' => [
       'views' => [
-        'auth/login',
+        'home',
       ],
     ],
-    'POST' => 'index',
-    'controller' => UsuarioController::class,
-  ],
-  '/recuperar-senha' => [
-    'GET' => [
-      'views' => [
-        'auth/recuperar-senha',
-      ],
-    ],
-  ],
-  '/dashboard' => [
-    'GET' => 'index',
-    'controller' => DashboardController::class,
   ],
 ];
 
